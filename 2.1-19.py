@@ -1,39 +1,18 @@
-def main():
-    name = input()
-    cost = int(input())
-    ves = int(input())
-    money = int(input())
-    itg = ves * cost
-    bill(name, cost, ves, money, itg)
+product_name = input()
+product_price = int(input())
+product_weight = int(input())
+amount_paid = int(input())
 
-    
-def bill(name, cost, ves, money, itg):
+total_cost = product_price * product_weight
 
-    nthg = ' '
+change = amount_paid - total_cost
 
-    tt = '                           '
-    tsp = len(tt) - len(name) + 2
+dop_str = str(product_weight) + 'кг * ' + str(product_price) + 'руб/кг'
 
-    cs = '                              '
-    csp = len(cs) - (len(str(cost)) + len(str(ves)) + len('кг * руб/кг') + 0)
-
-    inp = '                          '
-    inpp = len(inp) - ((len(str(money)) + 2))
-
-    itgs = '                     '
-    itgsp = len(itgs) - (len(str(itg)) - 5)
-
-    mbck = '                             '
-    mbcks = len(mbck) - (len(str(money - itg)) + 3)
-    
-    print('================Чек================')
-    print(f'Товар:{nthg * tsp}{name}')
-    print(f'Цена:{nthg * csp}{ves}кг * {cost}руб/кг')
-    print(f'Итого:{nthg * itgsp}{itg}руб')
-    print(f'Внесено:{nthg * inpp}{money}руб')
-    print(f'Сдача:{nthg * mbcks}{money - itg}руб')
-    print('===================================')
-
-    
-if __name__ == main():
-    main()
+print("================Чек================")
+print(f"Товар: {product_name:>28}")
+print(f"Цена: {dop_str:>29}")
+print(f"Итого: {(total_cost):>25}руб")
+print(f"Внесено: {(amount_paid):>23}руб")
+print(f"Сдача: {(change):>25}руб")
+print("===================================")
