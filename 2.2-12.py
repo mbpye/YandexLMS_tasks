@@ -1,9 +1,7 @@
-# Считываем длины трубочек
-a = float(input("Введите длину первой трубочки: "))
-b = float(input("Введите длину второй трубочки: "))
-c = float(input("Введите длину третьей трубочки: "))
+a = float(input())
+b = float(input())
+c = float(input())
 
-# Проверяем условие треугольника
 if (a + b > c) and (a + c > b) and (b + c > a):
     print("YES")
 else:
